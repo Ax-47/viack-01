@@ -24,9 +24,11 @@
 //                  ++++++      ++++++
 #ifndef JOSLAYER_H
 #define JOSLAYER_H
+#include <ESP32Servo.h> 
 class JoSlayer {
     private:
         bool debug = false;
+        Servo servoMotor;
         int countExacute = 0;
         int somkeDetection = 0;
         int motor1Pin1 = 0;
@@ -43,11 +45,13 @@ class JoSlayer {
  
     public:
         JoSlayer();
-       void Begin(bool debug,int motor1Pin,int motor1Pin2,int motor2Pin1,int motor2Pin2);
+       void Begin(bool debug,int motor1Pin,int motor1Pin2,int motor2Pin1,int motor2Pin2,int servopin);
         void SomkeDetect();
 
 };
 
 extern JoSlayer JO;
+
+#endif
 
 #endif

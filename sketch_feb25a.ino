@@ -36,6 +36,8 @@
 #define motor2Pin1 32//motor
 #define motor2Pin2 33//motor
 
+#define servo_pin 19
+
 //dust sensor setup
 #define samplingTime 280
 #define deltaTime 40
@@ -68,7 +70,7 @@ void setup(){
   }
   Serial.println(WiFi.localIP());
    LINE.begin(LINE_TOKEN);
-   JO.Begin(DEBUG,motor1Pin1,motor1Pin2,motor2Pin1,motor2Pin2);
+   JO.Begin(DEBUG,motor1Pin1,motor1Pin2,motor2Pin1,motor2Pin2,servo_pin);
 }
 
 void loop(){
